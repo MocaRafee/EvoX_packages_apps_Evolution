@@ -51,6 +51,8 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener, Indexable {
 
     private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
+    private static final String KEY_DEVICE_PART = "advanced_controls";
+    private static final String KEY_DEVICE_PART_PACKAGE_NAME = "com.thht.settings.device";
 
     private ListPreference mLaunchPlayerHeadsetConnection;
 
@@ -59,6 +61,11 @@ public class MiscSettings extends SettingsPreferenceFragment implements
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.evolution_settings_misc);
+
+    // Advanced Controls
+        if (!com.evolution.settings.preferences.Utils.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
+            }
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mLaunchPlayerHeadsetConnection = (ListPreference) findPreference(HEADSET_CONNECT_PLAYER);

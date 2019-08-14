@@ -866,4 +866,7 @@
     <string name="flashlight_on_call_dnd">Blink flashlight only in DND mode</string>
     <string name="flashlight_on_call_always">Always blink flashlight</string>
 
+        <!-- Advanced Controls -->
+    <string name="advanced_controls_title">Advanced Controls</string>
+    <string name="advanced_controls_summary">Change vibration, flash light and display rgb intensity </string>
 </resources>
